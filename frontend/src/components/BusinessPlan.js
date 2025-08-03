@@ -35,51 +35,6 @@ const iconMap = {
 const BusinessPlan = () => {
   const [activeSection, setActiveSection] = useState('overview');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { data, loading, error } = useBusinessPlan();
-
-  // Show loading state while data is being fetched
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <Loader2 className="w-12 h-12 text-red-600 animate-spin mx-auto mb-4" />
-          <h2 className="text-xl font-semibold text-gray-900 mb-2">İş Planı Yükleniyor...</h2>
-          <p className="text-gray-600">Lütfen bekleyiniz</p>
-        </div>
-      </div>
-    );
-  }
-
-  // Show error state if API call fails
-  if (error) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center max-w-md">
-          <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <X className="w-8 h-8 text-red-600" />
-          </div>
-          <h2 className="text-xl font-semibold text-gray-900 mb-2">Veri Yüklenirken Hata Oluştu</h2>
-          <p className="text-gray-600 mb-4">{error}</p>
-          <Button onClick={() => window.location.reload()} className="bg-red-600 hover:bg-red-700">
-            Yeniden Dene
-          </Button>
-        </div>
-      </div>
-    );
-  }
-
-  // Extract data from API response
-  const businessPlanData = {
-    company: data.overview?.company || {},
-    executiveSummary: data.overview?.executiveSummary || {},
-    marketData: data.marketAnalysis?.marketData || {},
-    financialData: data.financial?.financialData || {},
-    menu: data.menu?.menu || {},
-    locations: data.locations?.locations || [],
-    investment: data.investment?.investment || {},
-    targetDemographics: data.marketAnalysis?.marketData?.target_demographics || [],
-    successMetrics: data.investment?.investment?.success_metrics || {}
-  };
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
