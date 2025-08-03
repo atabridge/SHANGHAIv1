@@ -416,6 +416,24 @@ const BusinessPlan = () => {
               ))}
             </div>
 
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">🥙 Pita Seçenekleri</h3>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {(businessPlanData.menu?.pita_options || []).map((pita, index) => (
+                  <Card key={index} className="hover:shadow-lg transition-shadow duration-300 border-blue-200">
+                    <CardContent className="p-6">
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="w-8 h-8 text-blue-600 flex items-center justify-center font-bold text-lg">🥙</div>
+                        <Badge className="bg-blue-100 text-blue-800">{pita.price}</Badge>
+                      </div>
+                      <h3 className="font-bold text-lg text-gray-900 mb-2">{pita.name}</h3>
+                      <p className="text-gray-600 text-sm">{pita.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+
             <div className="grid md:grid-cols-3 gap-6">
               <Card>
                 <CardHeader>
