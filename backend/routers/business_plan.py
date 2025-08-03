@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, Depends
 from typing import List
 import logging
 
-from ..models.business_plan import (
+from models.business_plan import (
     BusinessPlan, 
     CompanyInfo, 
     ExecutiveSummary,
