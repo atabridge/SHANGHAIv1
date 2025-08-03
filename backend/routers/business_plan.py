@@ -18,7 +18,9 @@ import os
 router = APIRouter(prefix="/business-plan", tags=["business-plan"])
 
 # MongoDB connection
-from ..server import db
+import sys
+sys.path.append('/app/backend')
+from server import db
 
 logger = logging.getLogger(__name__)
 
