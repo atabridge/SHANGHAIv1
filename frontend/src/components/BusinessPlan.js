@@ -116,8 +116,8 @@ const BusinessPlan = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Mobile Header */}
-      <div className="lg:hidden bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between sticky top-0 z-40">
+      {/* Mobile Header - Fixed Position */}
+      <div className="lg:hidden bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between fixed top-0 left-0 right-0 z-40">
         <h1 className="text-lg font-bold text-gray-900">Shanghai Cloud Kitchen</h1>
         <Button
           variant="ghost"
@@ -127,6 +127,9 @@ const BusinessPlan = () => {
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </Button>
       </div>
+
+      {/* Mobile Content Padding */}
+      <div className="lg:hidden pt-16"></div>
 
       {/* Mobile Navigation Overlay */}
       {mobileMenuOpen && (
