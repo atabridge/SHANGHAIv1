@@ -1,3 +1,8 @@
+/* Remove default centering */
+.App {
+    /* Remove text-align: center to prevent disrupting natural reading flow */
+}
+
 .App-logo {
     height: 40vmin;
     pointer-events: none;
@@ -31,4 +36,112 @@
     to {
         transform: rotate(360deg);
     }
+}
+
+/* Custom styles for business plan presentation */
+.section-transition {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom gradient backgrounds */
+.gradient-bg-red {
+    background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+}
+
+.gradient-bg-blue {
+    background: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 100%);
+}
+
+.gradient-bg-primary {
+    background: linear-gradient(135deg, #DC2626 0%, #1E3A8A 100%);
+}
+
+/* Card hover effects */
+.card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Navigation active states */
+.nav-item-active {
+    background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+    color: white;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+/* Chart animations */
+.chart-container {
+    opacity: 0;
+    animation: fadeInUp 0.8s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile responsive improvements */
+@media (max-width: 768px) {
+    .mobile-padding {
+        padding: 1rem;
+    }
+    
+    .mobile-text {
+        font-size: 0.875rem;
+    }
+}
+
+/* Loading skeleton */
+.skeleton {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: .5;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #DC2626;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #B91C1C;
 }
