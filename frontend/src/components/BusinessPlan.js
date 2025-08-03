@@ -402,7 +402,7 @@ const BusinessPlan = () => {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-              {businessPlanData.menu.signatureBowls.map((bowl, index) => (
+              {(businessPlanData.menu?.signature_bowls || []).map((bowl, index) => (
                 <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between mb-3">
@@ -423,7 +423,7 @@ const BusinessPlan = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {businessPlanData.menu.proteins.map((protein, index) => (
+                    {(businessPlanData.menu?.proteins || []).map((protein, index) => (
                       <Badge key={index} variant="secondary" className="bg-red-100 text-red-800">
                         {protein}
                       </Badge>
@@ -438,7 +438,7 @@ const BusinessPlan = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {businessPlanData.menu.toppings.map((topping, index) => (
+                    {(businessPlanData.menu?.toppings || []).map((topping, index) => (
                       <Badge key={index} variant="secondary" className="bg-blue-100 text-blue-800">
                         {topping}
                       </Badge>
@@ -453,7 +453,7 @@ const BusinessPlan = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {businessPlanData.menu.sides.map((side, index) => (
+                    {(businessPlanData.menu?.sides || []).map((side, index) => (
                       <Badge key={index} variant="secondary" className="bg-green-100 text-green-800">
                         {side}
                       </Badge>
