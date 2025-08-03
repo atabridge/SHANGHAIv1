@@ -84,7 +84,7 @@ export const CostComparisonChart = ({ data }) => (
         radius={[4, 4, 0, 0]}
       />
       <Bar 
-        dataKey="cloud_kitchen" 
+        dataKey="cloudKitchen" 
         fill={COLORS.primary} 
         name="Cloud Kitchen"
         radius={[4, 4, 0, 0]}
