@@ -17,11 +17,9 @@ import {
   Star,
   Users,
   Clock,
-  Award,
-  Loader2
+  Award
 } from 'lucide-react';
-import { navigationSections } from '../services/api';
-import { useBusinessPlan } from '../hooks/useBusinessPlan';
+import { businessPlanData, navigationSections } from '../mock';
 import { 
   MarketGrowthChart, 
   CostComparisonChart, 
