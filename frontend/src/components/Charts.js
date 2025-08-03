@@ -46,7 +46,7 @@ export const MarketGrowthChart = ({ data }) => (
       />
       <Line 
         type="monotone" 
-        dataKey="cloud_kitchen" 
+        dataKey="cloudKitchen" 
         stroke={COLORS.primary} 
         strokeWidth={3}
         name="Cloud Kitchen (%)"
