@@ -652,12 +652,12 @@ const BusinessPlan = () => {
             <Card className="bg-gradient-to-r from-red-600 to-blue-600 text-white mb-8">
               <CardContent className="p-8">
                 <div className="text-center mb-8">
-                  <h3 className="text-4xl font-bold mb-2">{businessPlanData.investment.amount}</h3>
+                  <h3 className="text-4xl font-bold mb-2">{businessPlanData.investment?.amount || "1,500,000 RMB"}</h3>
                   <p className="text-xl">Aranan Yatırım</p>
                 </div>
                 
                 <div className="grid md:grid-cols-3 gap-6 mb-8">
-                  {businessPlanData.investment.usage.map((usage, index) => (
+                  {(businessPlanData.investment?.usage || []).map((usage, index) => (
                     <div key={index} className="text-center">
                       <h4 className="text-2xl font-bold">%{usage.percentage}</h4>
                       <p className="text-sm opacity-90">{usage.purpose}</p>
@@ -710,7 +710,7 @@ const BusinessPlan = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    {businessPlanData.investment.roiProjection.map((roi, index) => (
+                    {(businessPlanData.investment?.roi_projection || []).map((roi, index) => (
                       <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                         <span className="font-medium">{roi.year}. Yıl:</span>
                         <span className="font-bold text-green-600">{roi.roi}</span>
@@ -731,7 +731,7 @@ const BusinessPlan = () => {
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-3">6 Aylık Hedefler</h4>
                       <ul className="space-y-2">
-                        {businessPlanData.successMetrics.sixMonths.map((metric, index) => (
+                        {(businessPlanData.successMetrics?.six_months || []).map((metric, index) => (
                           <li key={index} className="flex items-center text-sm text-gray-700">
                             <div className="w-2 h-2 bg-red-600 rounded-full mr-3"></div>
                             {metric}
@@ -742,7 +742,7 @@ const BusinessPlan = () => {
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-3">12 Aylık Hedefler</h4>
                       <ul className="space-y-2">
-                        {businessPlanData.successMetrics.twelveMonths.map((metric, index) => (
+                        {(businessPlanData.successMetrics?.twelve_months || []).map((metric, index) => (
                           <li key={index} className="flex items-center text-sm text-gray-700">
                             <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
                             {metric}
