@@ -375,7 +375,7 @@ const BusinessPlan = () => {
             <div className="mb-8">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">🥙 Pita Seçenekleri</h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {(businessPlanData.menu?.pita_options || []).map((pita, index) => (
+                {(businessPlanData.menu?.pitaOptions || []).map((pita, index) => (
                   <Card key={index} className="hover:shadow-lg transition-shadow duration-300 border-blue-200">
                     <CardContent className="p-6">
                       <div className="flex items-center justify-between mb-3">
