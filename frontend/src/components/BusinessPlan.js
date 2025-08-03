@@ -585,7 +585,7 @@ const BusinessPlan = () => {
                   <CardTitle>Başlangıç Yatırımı (İlk 2 Lokasyon)</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <InvestmentPieChart data={businessPlanData.financialData.initialInvestment} />
+                  <InvestmentPieChart data={businessPlanData.financialData?.initial_investment || []} />
                   <div className="mt-4 text-center">
                     <span className="text-2xl font-bold text-gray-900">1,000,000 RMB</span>
                     <p className="text-sm text-gray-600">Toplam Yatırım</p>
@@ -598,9 +598,11 @@ const BusinessPlan = () => {
                   <CardTitle>Gelir Projeksiyonu (İlk Yıl)</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <RevenueProjectionChart data={businessPlanData.financialData.revenueProjection} />
+                  <RevenueProjectionChart data={businessPlanData.financialData?.revenue_projection || []} />
                   <div className="mt-4 text-center">
-                    <span className="text-2xl font-bold text-green-600">6,300,000 RMB</span>
+                    <span className="text-2xl font-bold text-green-600">
+                      {businessPlanData.financialData?.profitability?.yearly_revenue?.toLocaleString() || '6,300,000'} RMB
+                    </span>
                     <p className="text-sm text-gray-600">Yıllık Ciro Hedefi</p>
                   </div>
                 </CardContent>
@@ -610,7 +612,9 @@ const BusinessPlan = () => {
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="bg-gradient-to-br from-green-50 to-emerald-50 border-green-200">
                 <CardContent className="p-6 text-center">
-                  <h3 className="text-2xl font-bold text-green-600">6.3M RMB</h3>
+                  <h3 className="text-2xl font-bold text-green-600">
+                    {((businessPlanData.financialData?.profitability?.yearly_revenue || 6300000) / 1000000).toFixed(1)}M RMB
+                  </h3>
                   <p className="text-sm text-gray-600 mb-2">Yıllık Ciro</p>
                   <div className="text-xs text-green-700">İlk yıl hedef</div>
                 </CardContent>
@@ -618,17 +622,21 @@ const BusinessPlan = () => {
               
               <Card className="bg-gradient-to-br from-blue-50 to-cyan-50 border-blue-200">
                 <CardContent className="p-6 text-center">
-                  <h3 className="text-2xl font-bold text-blue-600">5.04M RMB</h3>
+                  <h3 className="text-2xl font-bold text-blue-600">
+                    {((businessPlanData.financialData?.profitability?.operation_costs || 5040000) / 1000000).toFixed(2)}M RMB
+                  </h3>
                   <p className="text-sm text-gray-600 mb-2">Operasyon Giderleri</p>
-                  <div className="text-xs text-blue-700">%80 gider oranı</div>
+                  <div className="text-xs text-blue-700">{businessPlanData.financialData?.profitability?.margin ? (100 - businessPlanData.financialData.profitability.margin) : 80}% gider oranı</div>
                 </CardContent>
               </Card>
               
               <Card className="bg-gradient-to-br from-purple-50 to-violet-50 border-purple-200">
                 <CardContent className="p-6 text-center">
-                  <h3 className="text-2xl font-bold text-purple-600">1.26M RMB</h3>
+                  <h3 className="text-2xl font-bold text-purple-600">
+                    {((businessPlanData.financialData?.profitability?.net_profit || 1260000) / 1000000).toFixed(2)}M RMB
+                  </h3>
                   <p className="text-sm text-gray-600 mb-2">Net Kâr</p>
-                  <div className="text-xs text-purple-700">%20 net marj</div>
+                  <div className="text-xs text-purple-700">{businessPlanData.financialData?.profitability?.margin || 20}% net marj</div>
                 </CardContent>
               </Card>
             </div>
