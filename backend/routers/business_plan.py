@@ -221,6 +221,12 @@ async def seed_business_plan():
                     {"name": "Shanghai Spice Bowl", "price": "55 RMB", "description": "Yerel damak tadına uyarlanmış özel karışım"},
                     {"name": "Quinoa Garden Bowl", "price": "52 RMB", "description": "Vegan dostu süper gıda kasesi"}
                 ],
+                "pita_options": [
+                    {"name": "Mediterranean Pita Wrap", "price": "38 RMB", "description": "Taze malzemelerle dolu klasik pita"},
+                    {"name": "Chicken Shawarma Pita", "price": "42 RMB", "description": "Baharatlı tavuk ve taze soslarla"},
+                    {"name": "Falafel Pita Delight", "price": "35 RMB", "description": "Ev yapımı falafel ve tahini soslu"},
+                    {"name": "Shanghai Fusion Pita", "price": "44 RMB", "description": "Doğu-Batı füzyon lezzetleri"}
+                ],
                 "proteins": ["Grilled Chicken", "Lamb Kofta", "Falafel", "Grilled Salmon", "Tofu Teriyaki"],
                 "toppings": ["Hummus", "Tzatziki", "Harissa", "Tabbouleh", "Roasted Vegetables", "Fresh Herbs"],
                 "sides": ["Pita Bread", "Baklava Bites", "Fresh Fruit Cups", "Premium Beverages"]
