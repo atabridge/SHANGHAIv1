@@ -260,19 +260,19 @@ const BusinessPlan = () => {
                 <CardContent>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center p-4 bg-red-50 rounded-lg">
-                      <h3 className="text-2xl font-bold text-red-600">50+ milyar</h3>
+                      <h3 className="text-2xl font-bold text-red-600">{businessPlanData.marketData?.shanghai_market?.size || "50+ milyar"}</h3>
                       <p className="text-sm text-gray-600">Pazar Büyüklüğü (RMB)</p>
                     </div>
                     <div className="text-center p-4 bg-blue-50 rounded-lg">
-                      <h3 className="text-2xl font-bold text-blue-600">15-20%</h3>
+                      <h3 className="text-2xl font-bold text-blue-600">{businessPlanData.marketData?.shanghai_market?.growth || "15-20%"}</h3>
                       <p className="text-sm text-gray-600">Yıllık Büyüme</p>
                     </div>
                     <div className="text-center p-4 bg-green-50 rounded-lg">
-                      <h3 className="text-2xl font-bold text-green-600">85%+</h3>
+                      <h3 className="text-2xl font-bold text-green-600">{businessPlanData.marketData?.shanghai_market?.penetration || "85%+"}</h3>
                       <p className="text-sm text-gray-600">Online Penetrasyon</p>
                     </div>
                     <div className="text-center p-4 bg-purple-50 rounded-lg">
-                      <h3 className="text-2xl font-bold text-purple-600">45-80</h3>
+                      <h3 className="text-2xl font-bold text-purple-600">{businessPlanData.marketData?.shanghai_market?.average_order || "45-80"}</h3>
                       <p className="text-sm text-gray-600">Ortalama Sipariş (RMB)</p>
                     </div>
                   </div>
@@ -295,7 +295,7 @@ const BusinessPlan = () => {
                   <CardTitle>Pazar Büyüme Trendi (2020-2027)</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <MarketGrowthChart data={businessPlanData.marketData.cloudKitchenGrowth} />
+                  <MarketGrowthChart data={businessPlanData.marketData?.cloud_kitchen_growth || []} />
                 </CardContent>
               </Card>
             </div>
@@ -305,7 +305,7 @@ const BusinessPlan = () => {
                 <CardTitle>Cloud Kitchen vs Geleneksel Restoran Maliyet Karşılaştırması</CardTitle>
               </CardHeader>
               <CardContent>
-                <CostComparisonChart data={businessPlanData.marketData.costComparison} />
+                <CostComparisonChart data={businessPlanData.marketData?.cost_comparison || []} />
               </CardContent>
             </Card>
           </section>
