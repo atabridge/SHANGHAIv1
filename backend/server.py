@@ -11,7 +11,7 @@ import uuid
 from datetime import datetime
 
 # Import business plan router
-from .routers import business_plan
+from routers import business_plan
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
