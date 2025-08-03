@@ -495,7 +495,7 @@ const BusinessPlan = () => {
                         <div className="mt-3">
                           <span className="font-medium">Özellikler:</span>
                           <ul className="mt-2 space-y-1">
-                            {location.features.map((feature, idx) => (
+                            {(location.features || []).map((feature, idx) => (
                               <li key={idx} className="text-sm text-gray-600">• {feature}</li>
                             ))}
                           </ul>
@@ -529,7 +529,7 @@ const BusinessPlan = () => {
                         <div className="mt-3">
                           <span className="font-medium">Özellikler:</span>
                           <ul className="mt-2 space-y-1">
-                            {location.features.map((feature, idx) => (
+                            {(location.features || []).map((feature, idx) => (
                               <li key={idx} className="text-sm text-gray-600">• {feature}</li>
                             ))}
                           </ul>
