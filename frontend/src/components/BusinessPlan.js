@@ -148,8 +148,8 @@ const BusinessPlan = () => {
       )}
 
       <div className="lg:flex">
-        {/* Desktop Sidebar */}
-        <div className="hidden lg:block w-64 bg-white border-r border-gray-200 min-h-screen sticky top-0">
+        {/* Desktop Sidebar - Fixed Position */}
+        <div className="hidden lg:block w-64 bg-white border-r border-gray-200 fixed left-0 top-0 h-screen overflow-y-auto z-30">
           <div className="p-6">
             <div className="mb-8">
               <h1 className="text-2xl font-bold text-gray-900 mb-2">Shanghai Cloud Kitchen</h1>
@@ -159,8 +159,8 @@ const BusinessPlan = () => {
           </div>
         </div>
 
-        {/* Main Content */}
-        <div className="flex-1 max-w-4xl mx-auto p-6 lg:p-8">
+        {/* Main Content with Left Margin for Fixed Sidebar */}
+        <div className="lg:ml-64 flex-1 max-w-4xl mx-auto p-6 lg:p-8">
           {/* Hero Section */}
           <section id="overview" className="mb-16">
             <div className="text-center mb-12">
